@@ -32,8 +32,6 @@ impl Range {
 }
 
 fn main() {
-    // part 2 involved destroying part 1's solution. Sorry.
-
     let stdin = io::stdin();
 
     let mut fully_contained = 0;
