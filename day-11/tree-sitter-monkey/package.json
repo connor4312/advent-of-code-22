@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "generate": "tree-sitter generate",
+    "parse": "tree-sitter parse ../input.txt"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.7"
+  },
+  "main": "bindings/node"
+}

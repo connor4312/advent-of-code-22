@@ -1,0 +1,232 @@
+[
+  {
+    "type": "integer_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "integer",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "item_test",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "operand",
+          "named": true
+        },
+        {
+          "type": "throw_to_monkey",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "monkey",
+    "named": true,
+    "fields": {
+      "attrs": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "monkey_attributes",
+            "named": true
+          }
+        ]
+      },
+      "id": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "integer",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "monkey_attributes",
+    "named": true,
+    "fields": {
+      "operation": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "operation",
+            "named": true
+          }
+        ]
+      },
+      "starting_items": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "starting_items",
+            "named": true
+          }
+        ]
+      },
+      "test": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "item_test",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "operand",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "operation",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "operand",
+          "named": true
+        },
+        {
+          "type": "operator",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "operator",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "monkey",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "starting_items",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "integer_list",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "throw_to_monkey",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "operand",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "*",
+    "named": false
+  },
+  {
+    "type": "+",
+    "named": false
+  },
+  {
+    "type": ",",
+    "named": false
+  },
+  {
+    "type": "-",
+    "named": false
+  },
+  {
+    "type": "/",
+    "named": false
+  },
+  {
+    "type": ":",
+    "named": false
+  },
+  {
+    "type": "If false:",
+    "named": false
+  },
+  {
+    "type": "If true:",
+    "named": false
+  },
+  {
+    "type": "Monkey",
+    "named": false
+  },
+  {
+    "type": "Operation: new = ",
+    "named": false
+  },
+  {
+    "type": "Starting items: ",
+    "named": false
+  },
+  {
+    "type": "Test: divisible by",
+    "named": false
+  },
+  {
+    "type": "integer",
+    "named": true
+  },
+  {
+    "type": "old",
+    "named": false
+  },
+  {
+    "type": "throw to monkey",
+    "named": false
+  }
+]

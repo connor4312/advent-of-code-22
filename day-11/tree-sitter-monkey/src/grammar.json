@@ -1,0 +1,253 @@
+{
+  "name": "monkey",
+  "rules": {
+    "source_file": {
+      "type": "REPEAT",
+      "content": {
+        "type": "SYMBOL",
+        "name": "monkey"
+      }
+    },
+    "integer_list": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "integer"
+              },
+              {
+                "type": "STRING",
+                "value": ","
+              }
+            ]
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "integer"
+        }
+      ]
+    },
+    "integer": {
+      "type": "PATTERN",
+      "value": "\\d+"
+    },
+    "operand": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "[a-z0-9]+"
+        },
+        {
+          "type": "STRING",
+          "value": "old"
+        }
+      ]
+    },
+    "operator": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "+"
+        },
+        {
+          "type": "STRING",
+          "value": "/"
+        },
+        {
+          "type": "STRING",
+          "value": "-"
+        },
+        {
+          "type": "STRING",
+          "value": "*"
+        }
+      ]
+    },
+    "monkey_attributes": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "starting_items",
+            "content": {
+              "type": "SYMBOL",
+              "name": "starting_items"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "operation",
+            "content": {
+              "type": "SYMBOL",
+              "name": "operation"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "test",
+            "content": {
+              "type": "SYMBOL",
+              "name": "item_test"
+            }
+          }
+        ]
+      }
+    },
+    "monkey_attribute": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "starting_items",
+          "content": {
+            "type": "SYMBOL",
+            "name": "starting_items"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "operation",
+          "content": {
+            "type": "SYMBOL",
+            "name": "operation"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "test",
+          "content": {
+            "type": "SYMBOL",
+            "name": "item_test"
+          }
+        }
+      ]
+    },
+    "starting_items": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "Starting items: "
+        },
+        {
+          "type": "SYMBOL",
+          "name": "integer_list"
+        }
+      ]
+    },
+    "operation": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "Operation: new = "
+        },
+        {
+          "type": "SYMBOL",
+          "name": "operand"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "operator"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "operand"
+        }
+      ]
+    },
+    "item_test": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "Test: divisible by"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "operand"
+        },
+        {
+          "type": "STRING",
+          "value": "If true:"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "throw_to_monkey"
+        },
+        {
+          "type": "STRING",
+          "value": "If false:"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "throw_to_monkey"
+        }
+      ]
+    },
+    "throw_to_monkey": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "throw to monkey"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "operand"
+        }
+      ]
+    },
+    "monkey": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "Monkey"
+        },
+        {
+          "type": "FIELD",
+          "name": "id",
+          "content": {
+            "type": "SYMBOL",
+            "name": "integer"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ":"
+        },
+        {
+          "type": "FIELD",
+          "name": "attrs",
+          "content": {
+            "type": "SYMBOL",
+            "name": "monkey_attributes"
+          }
+        }
+      ]
+    }
+  },
+  "extras": [
+    {
+      "type": "PATTERN",
+      "value": "\\s"
+    }
+  ],
+  "conflicts": [],
+  "precedences": [],
+  "externals": [],
+  "inline": [],
+  "supertypes": []
+}
+
